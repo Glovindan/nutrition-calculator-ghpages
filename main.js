@@ -45,10 +45,12 @@ const onParamsChange = () => {
     const ageValue = document.getElementById("age").value;
     const weightValue = document.getElementById("weight").value;
     const growthValue = document.getElementById("growth").value;
+    const recalcValue = document.getElementById("calories-recalc").value;
 
     const age = ageValue == "" ? undefined : parseFloat(ageValue);
     const weight = weightValue == "" ? undefined : parseFloat(weightValue);
     const growth = growthValue == "" ? undefined : parseFloat(growthValue);
+    const recalc = recalcValue == "" ? 0 : parseFloat(recalcValue);
 
     const isMale = document.getElementById("sex").value == "male";
     const activityLevel = activityLevels[document.getElementById("level").value];
@@ -63,7 +65,7 @@ const onParamsChange = () => {
         return;
     }
 
-    const dailyCalories = getDailyCalories(weight, age, growth, isMale, activityLevel);
+    const dailyCalories = getDailyCalories(weight, age, growth, isMale, activityLevel) + recalc;
     const dailyProteins = nutRel.proteins * dailyCalories / 4;
     const dailyCarbohydrates = nutRel.carbohydrates * dailyCalories / 4;
     const dailyFats = nutRel.fats * dailyCalories / 9;
