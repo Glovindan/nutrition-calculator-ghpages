@@ -27,9 +27,11 @@ body {
     font-weight: 300;
     padding: 4px 18px;
     border-radius: 9px;
-    background: #fbffae;
-    box-shadow: 10px 10px 20px -4px rgba(0, 0, 0, 0.2) inset,
-                -10px -10px 20px -4px rgba(255, 255, 255, 0.6) inset;
+    border: 2px solid transparent;
+    box-shadow: 5px 5px 10px -4px rgba(0, 0, 0, 0.2), 
+    -5px -5px 10px -4px rgba(255, 255, 255, 0.6),
+    5px 5px 10px -4px rgba(0, 0, 0, 0.2) inset, 
+    -5px -5px 10px -4px rgba(255, 255, 255, 0.6) inset;
     margin: 9px 0;
 }
 

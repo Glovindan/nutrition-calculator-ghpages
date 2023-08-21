@@ -66,9 +66,9 @@ const onParamsChange = () => {
     }
 
     const dailyCalories = getDailyCalories(weight, age, growth, isMale, activityLevel) + recalc;
-    const dailyProteins = nutRel.proteins * dailyCalories / 4;
-    const dailyCarbohydrates = nutRel.carbohydrates * dailyCalories / 4;
-    const dailyFats = nutRel.fats * dailyCalories / 9;
+    const dailyProteins = (nutRel.proteins * dailyCalories) / 4;
+    const dailyCarbohydrates = (nutRel.carbohydrates * dailyCalories) / 4;
+    const dailyFats = (nutRel.fats * dailyCalories) / 9;
 
     document.getElementById("result-calories").innerText = Math.ceil(dailyCalories);
     document.getElementById("result-proteins").innerText = Math.ceil(dailyProteins);
