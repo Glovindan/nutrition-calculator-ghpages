@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Калькулятор КБЖУ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="main-wrapper">
+        <div class="card-wrapper" style="margin-top: 20px;">
+            <div class="input-grid">
+                <span> Возраст: </span>
+                <input class="input-neo" oninput="onParamsChange()" type="number" id="age">
+                <span> Вес: </span>
+                <input class="input-neo" oninput="onParamsChange()" type="number" id="weight">
+                <span> Рост: </span>
+                <input class="input-neo" oninput="onParamsChange()" type="number" id="growth">
+                <span> Пол: </span>
+                <select class="input-neo" oninput="onParamsChange()" name="sex" id="sex">
+                    <option value="male"> Мужчина </option>
+                    <option value="female"> Женщина </option>
+                </select>
+            </div>
+
+            <div class="hint">
+                <p><span>Минимальная активность:</span> Нет физических нагрузок и сидячая работа.</p>
+                <p><span>Слабая активность:</span> Небольшие пробежки или легкая гимнастика 1–3 раза в неделю.</p>
+                <p><span>Средняя активность:</span> Спорт со средними нагрузками 3–5 раз в неделю.</p>
+                <p><span>Высокая активность:</span> Полноценные тренировки 6–7 раз в неделю.</p>
+                <p><span>Экстра активность:</span> Работа связана с физическим трудом, тренировки 2 раза в день с силовыми упражнениями.</p>
+            </div>
+
+            <div class="input-grid">
+                <span> Уровень активности: </span>
+                <select class="input-neo" oninput="onParamsChange()" name="level" id="level">
+                    <option value="minimal"> Минимальная активность </option>
+                    <option value="low"> Слабая активность </option>
+                    <option value="medium"> Средняя активность </option>
+                    <option value="high"> Высокая активность </option>
+                    <option value="extra"> Экстра активность </option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="card-wrapper">
+            <h3>Результаты рассчета</h3>
+            <p>Норма ккал в день: <span id="result-calories"> 0 </span> ккал </p>
+            <p>Норма белков в день: <span id="result-proteins"> 0 </span> г</p>
+            <p>Норма углеводов в день: <span id="result-carbohydrates"> 0 </span> г</p>
+            <p>Норма жиров в день: <span id="result-fats"> 0 </span> г</p>
+        </div>
+    </div>
+    
     <script src="main.js"></script>
 </body>
 </html>
